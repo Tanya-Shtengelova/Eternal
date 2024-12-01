@@ -1,0 +1,746 @@
+[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "CreditAgreements",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "CreditAgreementID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "CustomerID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "CreditProductID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "AgreementDate",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "LoanAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "LoanTerm",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "InterestRate",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "CreditProducts",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "CreditProductID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "ProductName",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "InterestRate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "MaxLoanAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "MinRepaymentTerm",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "CollateralRequired",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "CreditTransactions",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "TransactionID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "CustomerID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "CreditAgreementID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "TransactionDate",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "TransactionAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "TransactionTypeID",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "Customers",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "CustomerId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "CustomerTypeID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "Name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "DateOfBirth",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "RegistrationDate",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "TIN",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "ContactInfo",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "TransactionTypes",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "TransactionTypeID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "TransactionTypeName",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "CustomerID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "CreditProductID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "AgreementDate",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "LoanAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "LoanTerm",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "InterestRate",
+				"type": "uint256"
+			}
+		],
+		"name": "addCreditAgreement",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "ProductName",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "InterestRate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "MaxLoanAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "MinRepaymentTerm",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "CollateralRequired",
+				"type": "bool"
+			}
+		],
+		"name": "addCreditProduct",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "CustomerID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "CreditAgreementID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "TransactionDate",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "TransactionAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "TransactionTypeID",
+				"type": "uint256"
+			}
+		],
+		"name": "addCreditTransaction",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "CustomerTypeID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "Name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "DateOfBirth",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "RegistrationDate",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "TIN",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "ContactInfo",
+				"type": "string"
+			}
+		],
+		"name": "addCustomer",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "idCust",
+				"type": "uint256"
+			}
+		],
+		"name": "createReport",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "CustomerId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "CustomerTypeID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "Name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "DateOfBirth",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "RegistrationDate",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "TIN",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "ContactInfo",
+						"type": "string"
+					}
+				],
+				"internalType": "struct Credit.Customer",
+				"name": "cs",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "CreditProductID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "ProductName",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "InterestRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "MaxLoanAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "MinRepaymentTerm",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "CollateralRequired",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct Credit.CreditProduct[]",
+				"name": "pr",
+				"type": "tuple[]"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "CreditAgreementID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "CustomerID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "CreditProductID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "AgreementDate",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "LoanAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "LoanTerm",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "InterestRate",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct Credit.CreditAgreement[]",
+				"name": "agr",
+				"type": "tuple[]"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "TransactionID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "CustomerID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "CreditAgreementID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "TransactionDate",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "TransactionAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "TransactionTypeID",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct Credit.CreditTransaction[]",
+				"name": "tr",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "viewAgree",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "CreditAgreementID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "CustomerID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "CreditProductID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "AgreementDate",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "LoanAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "LoanTerm",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "InterestRate",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct Credit.CreditAgreement[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "viewCustomer",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "CustomerId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "CustomerTypeID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "Name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "DateOfBirth",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "RegistrationDate",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "TIN",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "ContactInfo",
+						"type": "string"
+					}
+				],
+				"internalType": "struct Credit.Customer[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "viewProduct",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "CreditProductID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "ProductName",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "InterestRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "MaxLoanAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "MinRepaymentTerm",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "CollateralRequired",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct Credit.CreditProduct[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "viewTrans",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "TransactionID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "CustomerID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "CreditAgreementID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "TransactionDate",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "TransactionAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "TransactionTypeID",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct Credit.CreditTransaction[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "viewType",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "TransactionTypeID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "TransactionTypeName",
+						"type": "string"
+					}
+				],
+				"internalType": "struct Credit.TransactionType[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

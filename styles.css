@@ -1,0 +1,166 @@
+/* Общие стили */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+/* Карточка авторизации */
+.auth-card {
+  background-color: #5A2D82; /* Фиолетовый фон */
+  color: white;
+  width: 400px;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.auth-card h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.auth-card p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #e0e0e0;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px -10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.auth-card button {
+  width: 100%; 
+  padding: 12px; 
+  background-color: #f47c28;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.auth-card button:hover {
+  background-color: #e56d1f;
+}
+
+/* Панель управления */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Две колонки */
+  gap: 20px; /* Расстояние между карточками */
+  padding: 20px;
+}
+
+.card {
+  background-color: #5A2D82; /* Фиолетовый */
+  color: white;
+  width: 300px; /* Увеличен размер карточек */
+  height: 230px; /* Увеличен размер карточек */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card button {
+  width: 100px;
+  padding: 8px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.card button:first-child {
+  background-color: white;
+  color: #5A2D82;
+}
+
+.card button:first-child:hover {
+  background-color: #e0e0e0;
+}
+
+.card button:last-child {
+  background-color: #f47c28;
+  color: white;
+}
+
+.card button:last-child:hover {
+  background-color: #e56d1f;
+}
+
+/* Общие стили для модальных окон */
+.modal {
+  display: none; /* Окно скрыто по умолчанию */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.modal-content h3 {
+  margin-bottom: 20px;
+}
+
+.modal-content input, .modal-content select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.modal-content .close-btn {
+  background-color: #f47c28;
+  color: white;
+}
+
+.modal-content .submit-btn {
+  background-color: #5A2D82;
+  color: white;
+}

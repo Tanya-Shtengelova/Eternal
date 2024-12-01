@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Панель управления</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="JavaScript.js"></script>
+</head>
+<body>
+  <div class="dashboard">
+    <div class="card">
+      <h3>Клиенты</h3>
+      <button onclick="openModal('client-add')">Добавить</button>
+      <button onclick="openModal('client-info')">Информация</button>
+      <button onclick="openModal('client-CreateReport')">Сформировать отчёт</button>
+    </div>
+    <div class="card">
+      <h3>Кредитные продукты</h3>
+      <button onclick="openModal('product-add')">Добавить</button>
+      <button onclick="openModal('product-info')">Информация</button>
+    </div>
+    <div class="card">
+      <h3>Кредитные договоры</h3>
+      <button onclick="openModal('contract-add')">Добавить</button>
+      <button onclick="openModal('contract-info')">Информация</button>
+    </div>
+    <div class="card">
+      <h3>Транзакции</h3>
+      <button onclick="openModal('transaction-add')">Добавить</button>
+      <button onclick="openModal('transaction-info')">Информация</button>
+    </div>
+    <div class="card">
+      <h3>Типы операций</h3>
+      <button onclick="openModal('operation-type-info')">Информация</button>
+    </div>
+  </div>
+
+  <!-- Модальные окна -->
+  <!-- Клиенты -->
+  <div id="client-add" class="modal">
+    <div class="modal-content">
+      <h3>Добавить клиента</h3>
+      <input type="text" placeholder="Уникальный идентификатор" data-category="client" data-field="id" oninput="handleInput(this, 'client', 'id')">
+      <select data-category="client" data-field="type" oninput="handleInput(this, 'client', 'type')">
+        <option value="1">Физическое лицо</option>
+        <option value="2">Юридическое лицо</option>
+      </select>
+      <input type="text" placeholder="Имя или название компании" data-category="client" data-field="name" oninput="handleInput(this, 'client', 'name')">
+      <input type="date" placeholder="Дата рождения" data-category="client" data-field="birthDate" oninput="handleInput(this, 'client', 'birthDate')">
+      <input type="date" placeholder="Дата регистрации" data-category="client" data-field="registrationDate" oninput="handleInput(this, 'client', 'registrationDate')">
+      <input type="text" placeholder="ИНН" data-category="client" data-field="inn" oninput="handleInput(this, 'client', 'inn')">
+      <input type="text" placeholder="Контактная информация (телефон)" data-category="client" data-field="contactInfo" oninput="handleInput(this, 'client', 'contactInfo')">
+      <button class="submit-btn">Добавить</button>
+      <button class="close-btn" onclick="closeModal('client-add')">Закрыть</button>
+    </div>
+  </div>
+
+  <div id="client-info" class="modal">
+    <div class="modal-content">
+      <h3>Информация о клиенте</h3>
+      <input type="text" placeholder="Введите ID клиента" data-category="client" data-field="infoId" oninput="handleInput(this, 'client', 'infoId')">
+      <button class="submit-btn">Показать информацию</button>
+      <div class="info-output"></div>
+      <button class="close-btn" onclick="closeModal('client-info')">Закрыть</button>
+    </div>
+  </div>
+
+  <div id="client-CreateReport" class="modal">
+    <div class="modal-content">
+      <h3>Сформировать отчёт о клиенте</h3>
+      <input type="text" placeholder="Введите ID клиента" data-category="client" data-field="reportId" oninput="handleInput(this, 'client', 'reportId')">
+      <button class="submit-btn">Сформировать отчёт</button>
+      <div class="info-output"></div>
+      <button class="close-btn" onclick="closeModal('client-CreateReport')">Закрыть</button>
+    </div>
+  </div>
+
+  <!-- Продукты -->
+  <div id="product-add" class="modal">
+    <div class="modal-content">
+      <h3>Добавить кредитный продукт</h3>
+      <input type="text" placeholder="Уникальный идентификатор" data-category="product" data-field="id" oninput="handleInput(this, 'product', 'id')">
+      <input type="text" placeholder="Название продукта" data-category="product" data-field="name" oninput="handleInput(this, 'product', 'name')">
+      <input type="number" placeholder="Процентная ставка" data-category="product" data-field="interestRate" oninput="handleInput(this, 'product', 'interestRate')">
+      <input type="number" placeholder="Максимальная сумма кредита" data-category="product" data-field="maxAmount" oninput="handleInput(this, 'product', 'maxAmount')">
+      <input type="number" placeholder="Минимальный срок погашения" data-category="product" data-field="minTerm" oninput="handleInput(this, 'product', 'minTerm')">
+      <select data-category="product" data-field="isActive" oninput="handleInput(this, 'product', 'isActive')">
+        <option value="yes">Да</option>
+        <option value="no">Нет</option>
+      </select>
+      <button class="submit-btn">Добавить</button>
+      <button class="close-btn" onclick="closeModal('product-add')">Закрыть</button>
+    </div>
+  </div>
+
+  <div id="product-info" class="modal">
+    <div class="modal-content">
+      <h3>Информация о кредитном продукте</h3>
+      <input type="text" placeholder="Введите ID продукта" data-category="product" data-field="infoId" oninput="handleInput(this, 'product', 'infoId')">
+      <button class="submit-btn">Показать информацию</button>
+      <div class="info-output"></div>
+      <button class="close-btn" onclick="closeModal('product-info')">Закрыть</button>
+    </div>
+  </div>
+
+  <!-- Договоры -->
+  <div id="contract-add" class="modal">
+    <div class="modal-content">
+      <h3>Добавить кредитный договор</h3>
+      <input type="text" placeholder="Уникальный идентификатор договора" data-category="contract" data-field="id" oninput="handleInput(this, 'contract', 'id')">
+      <input type="text" placeholder="Идентификатор клиента" data-category="contract" data-field="clientId" oninput="handleInput(this, 'contract', 'clientId')">
+      <input type="text" placeholder="Идентификатор продукта" data-category="contract" data-field="productId" oninput="handleInput(this, 'contract', 'productId')">
+      <input type="date" placeholder="Дата заключения" data-category="contract" data-field="date" oninput="handleInput(this, 'contract', 'date')">
+      <input type="number" placeholder="Сумма кредита" data-category="contract" data-field="amount" oninput="handleInput(this, 'contract', 'amount')">
+      <input type="number" placeholder="Срок кредита (мес)" data-category="contract" data-field="term" oninput="handleInput(this, 'contract', 'term')">
+      <input type="number" placeholder="Процентная ставка" data-category="contract" data-field="rate" oninput="handleInput(this, 'contract', 'rate')">
+      <button class="submit-btn">Добавить</button>
+      <button class="close-btn" onclick="closeModal('contract-add')">Закрыть</button>
+    </div>
+  </div>
+
+  <div id="contract-info" class="modal">
+    <div class="modal-content">
+      <h3>Информация о кредитном договоре</h3>
+      <input type="text" placeholder="Введите ID договора" data-category="contract" data-field="infoId" oninput="handleInput(this, 'contract', 'infoId')">
+      <button class="submit-btn">Показать информацию</button>
+      <div class="info-output"></div>
+      <button class="close-btn" onclick="closeModal('contract-info')">Закрыть</button>
+    </div>
+  </div>
+
+  <!-- Транзакции -->
+  <div id="transaction-add" class="modal">
+    <div class="modal-content">
+      <h3>Добавить транзакцию</h3>
+      <input type="text" placeholder="Идентификатор договора" data-category="transaction" data-field="contractId" oninput="handleInput(this, 'transaction', 'contractId')">
+      <input type="number" placeholder="Сумма" data-category="transaction" data-field="amount" oninput="handleInput(this, 'transaction', 'amount')">
+      <input type="date" placeholder="Дата" data-category="transaction" data-field="date" oninput="handleInput(this, 'transaction', 'date')">
+      <button class="submit-btn">Добавить</button>
+      <button class="close-btn" onclick="closeModal('transaction-add')">Закрыть</button>
+    </div>
+  </div>
+
+  <div id="transaction-info" class="modal">
+    <div class="modal-content">
+      <h3>Информация о транзакции</h3>
+      <input type="text" placeholder="Введите ID транзакции" data-category="transaction" data-field="infoId" oninput="handleInput(this, 'transaction', 'infoId')">
+      <button class="submit-btn">Показать информацию</button>
+      <div class="info-output"></div>
+      <button class="close-btn" onclick="closeModal('transaction-info')">Закрыть</button>
+    </div>
+  </div>
+
+  <!-- Типы операций -->
+  <div id="operation-type-info" class="modal">
+    <div class="modal-content">
+      <h3>Информация о типах операций</h3>
+      <button class="submit-btn">Показать все типы операций</button>
+      <div class="info-output"></div>
+      <button class="close-btn" onclick="closeModal('operation-type-info')">Закрыть</button>
+    </div>
+  </div>
+
+  <script>
+    // Глобальный объект для хранения данных
+    const formData = {
+      client: {},
+      product: {},
+      contract: {},
+      transaction: {},
+      operation: {}
+    };
+
+    // Функция для обработки изменений
+    function handleInput(element, category, field) {
+      if (!formData[category]) {
+        formData[category] = {};
+      }
+      formData[category][field] = element.value;
+      console.log(`${category} updated:`, formData[category]);
+    }
+
+    // Функции для открытия и закрытия модальных окон
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+CREATE DATABASE credit_db;
+
+USE credit_db;
+
+CREATE TABLE Customers (
+    CustomerID INT PRIMARY KEY,
+    CustomerTypeID INT,
+    Name VARCHAR(255),
+    DateOfBirth DATE,
+    RegistrationDate DATE,
+    TIN VARCHAR(20),
+    ContactInfo VARCHAR(255)
+);
+
+CREATE TABLE CreditAgreements (
+    CreditAgreementID INT PRIMARY KEY,
+    CustomerID INT,
+    CreditProductID INT,
+    AgreementDate DATE,
+    LoanAmount DECIMAL(15, 2),
+    LoanTerm INT,
+    InterestRate DECIMAL(5, 2),
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID),
+    FOREIGN KEY (CreditProductID) REFERENCES CreditProducts(CreditProductID)
+);
+
+CREATE TABLE CreditProducts (
+    CreditProductID INT PRIMARY KEY,
+    ProductName VARCHAR(255),
+    InterestRate DECIMAL(5, 2),
+    MaxLoanAmount DECIMAL(15, 2),
+    MinRepaymentTerm INT,
+    CollateralRequired BOOLEAN
+);
+
+CREATE TABLE CreditTransactions (
+    TransactionID INT PRIMARY KEY,
+    CustomerID INT,
+    CreditAgreementID INT,
+    TransactionDate DATE,
+    TransactionAmount DECIMAL(15, 2),
+    TransactionTypeID INT,
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID),
+    FOREIGN KEY (CreditAgreementID) REFERENCES CreditAgreements(CreditAgreementID),
+    FOREIGN KEY (TransactionTypeID) REFERENCES TransactionTypes(TransactionTypeID)
+);
+
+CREATE TABLE TransactionTypes (
+    TransactionTypeID INT PRIMARY KEY,
+    TransactionTypeName VARCHAR(255)
+);
